@@ -54,7 +54,6 @@ export default class BoActor {
             let damage_player = this._atq - monstre._def;
             if (damage_player > 0) {
                 if (monstre._HP - damage_player < 0) {
-                    monstre._HP = 0;
                     return ("You win!");
                 } else {
                     monstre._HP -= damage_player;
@@ -62,14 +61,13 @@ export default class BoActor {
             }
             let damage_monster = monstre._atq - this._def;
             if (damage_monster > 0) {
-                if (this._PV - damage_monster < 0) {
-                    this._PV = 0;
+                if (this._HP - damage_monster < 0) {
                     return ("You died!");
                 } else {
-                    this._PV -= damage_player;
+                    this._HP -= damage_monster;
                 }
             }
-            if (damage_player < 0 && damage_monster < 0) {
+            if (damage_player <= 0 && damage_monster <= 0) {
                 return ("Draw!");
             }
 
