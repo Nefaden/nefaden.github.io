@@ -1,9 +1,9 @@
-class BoActor {
-    constructor(name, image, PV, atq, def) {
+export default class BoActor {
+    constructor(name, image, HP, atq, def) {
         this._name = name;
         this._image = image;
         this._atq = atq;
-        this._PV = PV;
+        this._HP = HP;
         this._atq = atq;
         this._def = def;
     }
@@ -25,12 +25,12 @@ class BoActor {
         this._image = value;
     }
 
-    get PV() {
-        return this._PV;
+    get HP() {
+        return this._HP;
     }
 
-    set PV(value) {
-        this._PV = value;
+    set HP(value) {
+        this._HP = value;
     }
 
     get atq() {
@@ -49,8 +49,28 @@ class BoActor {
         this._def = value;
     }
 
-    // Fight(combatant, monstre) {
-    //
-    //     return 0;
-    // }
+    Fight(monstre) {
+        while (1) {
+            let damage_player = this._atq - monstre._def;
+            if (damage_player > 0) {
+                if (monstre._HP - damage_player < 0) {
+                    return ("You win!");
+                } else {
+                    monstre._HP -= damage_player;
+                }
+            }
+            let damage_monster = monstre._atq - this._def;
+            if (damage_monster > 0) {
+                if (this._HP - damage_monster < 0) {
+                    return ("You died!");
+                } else {
+                    this._HP -= damage_monster;
+                }
+            }
+            if (damage_player <= 0 && damage_monster <= 0) {
+                return ("Draw!");
+            }
+
+        }
+    }
 }

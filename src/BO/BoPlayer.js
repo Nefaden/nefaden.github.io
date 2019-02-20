@@ -1,6 +1,9 @@
-class BoPlayer extends BoActor {
+import BoActor from "./BoActor.js";
 
-    constructor(name, image, PV, atq, def) {
-        super(name, image, PV, atq, def);
+export default class BoPlayer extends BoActor {
+
+    constructor(name, image, HP, atq, def) {
+        super(name, image, HP, atq, def);
     }
+
 }

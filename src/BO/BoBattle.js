@@ -1,4 +1,7 @@
-class BoBattle {
+import BoPlayer from "./BoPlayer.js"
+import BoMonster from "./BoMonster.js"
+
+export default class BoBattle {
 
     constructor(player, combatant, lieu) {
         this._player = player;
