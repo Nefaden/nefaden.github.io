@@ -9,7 +9,6 @@ export default class BoBattle {
         this._lieu = lieu;
     }
 
-
     get player() {
         return this._player;
     }
@@ -34,3 +33,4 @@ export default class BoBattle {
         this._lieu = value;
     }
 }
+//test commit kraken
