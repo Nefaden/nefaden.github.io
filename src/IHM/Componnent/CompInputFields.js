@@ -1,0 +1,1 @@
+//Champs de base pour SAO

@@ -1,4 +1,5 @@
 export default class BoActor {
+    //constructeur par defaut
     constructor(name, image, HP, atq, def) {
         this._name = name;
         this._image = image;
